@@ -1,0 +1,19 @@
+{
+    "description": "",
+    "type": "neos-plugin",
+    "name": "dl/gallery-map",
+    "require": {
+        "neos/flow": "*",
+        "neos/metadata-contentrepositoryadapter": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "DL\\Gallery\\Map\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "DL.Gallery.Map"
+        }
+    }
+}

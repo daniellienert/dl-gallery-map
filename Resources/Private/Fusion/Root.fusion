@@ -1,0 +1,34 @@
+prototype(DL.Gallery.Map:Map) < prototype(Neos.Fusion:Template) {
+    templatePath = 'resource://DL.Gallery.Map/Private/Templates/Map.html'
+
+    mapData = Neos.Fusion:Collection {
+        collection = ${Array.slice(q(assets).children('[instanceof Neos.MetaData:Image][gpsLatitude]').get(),0,10)}
+
+        itemName = 'image'
+        itemRenderer = DL.Gallery.Map:MapDataEntry
+
+        @process {
+            removeLastComma = ${String.trim(value, ',')}
+            makeHash = ${'[' + value + ']'}
+        }
+    }
+}
+
+prototype(DL.Gallery.Map:MapDataEntry) < prototype(Neos.Fusion:Value) {
+    @context.image = ${q(image)}
+
+    data = Neos.Fusion:RawArray {
+        title = ${image.property('title')}
+        gpsLatitude = ${image.property('gpsLatitude')}
+        gpsLongitude = ${image.property('gpsLongitude')}
+        thumb = Neos.Neos:ImageUri {
+            asset = ${image.property('assetObject')}
+            width = 200
+            height = 200
+            allowCropping = true
+            allowUpScaling = true
+        }
+    }
+
+    value = ${Json.stringify(this.data) + ','}
+}
