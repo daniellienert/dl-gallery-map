@@ -12,6 +12,9 @@ prototype(DL.Gallery.Map:Map) < prototype(Neos.Fusion:Template) {
             makeHash = ${'[' + value + ']'}
         }
     }
+
+    mapConfiguration = ${Configuration.setting('DL.Gallery.Map')}
+    mapConfiguration.@process.json = ${Json.stringify(value)}
 }
 
 prototype(DL.Gallery.Map:MapDataEntry) < prototype(Neos.Fusion:Value) {

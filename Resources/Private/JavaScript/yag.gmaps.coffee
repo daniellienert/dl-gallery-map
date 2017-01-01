@@ -36,7 +36,7 @@ Google Maps integration for YAG gallery
       lat: 49.02
       lng: 8.4
     clusterStyles: [{
-      url: '/typo3conf/ext/yag_themepack_jquery/Resources/Public/GallerySource/Gmaps/img/cluster.png'
+      url: '/_Resources/Static/Packages/DL.Gallery.Map/Images/cluster.png'
       width: 36
       height: 36
       anchor: [8, 0]
@@ -46,7 +46,7 @@ Google Maps integration for YAG gallery
     infoBoxOptions:
       boxClass: 'yag-gmaps-infowindow'
       alignBottom: true
-      closeBoxURL: '/typo3conf/ext/yag_themepack_jquery/Resources/Public/GallerySource/Gmaps/img/close.png'
+      closeBoxURL: '/_Resources/Static/Packages/DL.Gallery.Map/Images/close.png'
       closeBoxMargin: '-12px'
       enableEventPropagation: true
       pixelOffset:
