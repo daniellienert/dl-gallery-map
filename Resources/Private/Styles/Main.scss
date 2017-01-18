@@ -1,6 +1,6 @@
-.yag-gmaps-container,
-.yag-gmaps-marker,
-.yag-gmaps-infowindow {
+.dl-gallery-map-container,
+.dl-gallery-map-marker,
+.dl-gallery-map-info {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -9,19 +9,20 @@
   -webkit-box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .4);
 }
 
-.yag-gmaps-container {
+.dl-gallery-map-container {
   border: 1px solid #333;
 }
 
-.yag-gmaps-marker {
+.dl-gallery-map-marker {
   border: 2px solid #fff;
   border-bottom-width: 4px;
           border-radius: 1px;
      -moz-border-radius: 1px;
   -webkit-border-radius: 1px;
+  background-size: 32px;
 }
 
-.yag-gmaps-infowindow {
+.dl-gallery-map-info {
   background-color: #fafafa;
   background-color: rgba(255, 255, 255, .9);
   padding: 3px;
@@ -29,30 +30,29 @@
 }
 
 
-.yag-gmaps-infowindow .gmaps-title {
+.dl-gallery-map-info .dl-gallery-map-title {
   font-weight: bold;
-  /*border-bottom: 1px solid #ccc;*/
   padding-bottom: 3px;
   margin-bottom: 5px;
   display: block;
   text-align: center;
 }
 
-.yag-gmaps-item-link {
+.dl-gallery-map-item-link {
   display: block;
   text-align: center;
 }
 
-.yag-gmaps-item-link img {
+.dl-gallery-map-item-link img {
   box-shadow: 0 1px 2px rgba(0, 0, 0, .4);
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .4);
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .4);
 }
 
-.yag-gmaps-item-group {
+.dl-gallery-map-item-group {
   margin: 3px auto 0;
 }
 
-.yag-gmaps-item-group .yag-gmaps-item-link {
+.dl-gallery-map-item-group .dl-gallery-map-item-link {
   display: inline;
 }

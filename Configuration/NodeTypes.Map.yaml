@@ -1,0 +1,11 @@
+'DL.Gallery.Map:Map':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Gallery Map
+    position: 200
+    icon: 'icon-map'
+    inspector:
+      groups:
+        properties:
+          label: 'Eigenschaften'

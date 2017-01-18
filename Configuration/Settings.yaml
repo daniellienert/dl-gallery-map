@@ -3,7 +3,7 @@ DL:
     Map:
       gmaps:
         width: "100%"
-        height: "450px"
+        height: "600px"
         showRouteToLink: false
         dropAnimation: true
         cluster: true
@@ -11,6 +11,15 @@ DL:
         showAllMarkers: true
         showFirstMarkerOnStart: false
         lightbox: true
+
+        marker:
+          width: 50
+          height: 50
+
+        thumb:
+          width: 200
+          height: 200
+
         mapOptions:
           zoom: 14
           streetViewControl: false

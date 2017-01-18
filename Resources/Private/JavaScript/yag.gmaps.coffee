@@ -37,14 +37,14 @@ Google Maps integration for YAG gallery
       lng: 8.4
     clusterStyles: [{
       url: '/_Resources/Static/Packages/DL.Gallery.Map/Images/cluster.png'
-      width: 36
-      height: 36
+      width: 42
+      height: 42
       anchor: [8, 0]
       textColor: '#fff'
       textSize: 14
     }]
     infoBoxOptions:
-      boxClass: 'yag-gmaps-infowindow'
+      boxClass: 'dl-gallery-map-info'
       alignBottom: true
       closeBoxURL: '/_Resources/Static/Packages/DL.Gallery.Map/Images/close.png'
       closeBoxMargin: '-12px'
@@ -136,7 +136,7 @@ Google Maps integration for YAG gallery
       markerOptions =
         title: markerData.title
         image: markerData.icon
-        classname: 'yag-gmaps-marker'
+        classname: 'map-marker'
 
       markerPosition = new google.maps.LatLng markerData.latitude, markerData.longitude
 
@@ -181,7 +181,7 @@ Google Maps integration for YAG gallery
       infoHtml = ''
 
       if data.title
-        infoHtml += "<span class=\"gmaps-title\">#{data.title}</span>"
+        infoHtml += "<span class=\"dl-gallery-map-title\">#{data.title}</span>"
 
       # Add marker content
       if data.markerContent

@@ -1,8 +1,7 @@
 prototype(DL.Gallery.Map:Map) < prototype(Neos.Fusion:Template) {
-    templatePath = 'resource://DL.Gallery.Map/Private/Templates/Map.html'
 
     mapData = Neos.Fusion:Collection {
-        collection = ${Array.slice(q(assets).children('[instanceof Neos.MetaData:Image][gpsLatitude]').get(),0,10)}
+        collection = ${q(assets).children('[instanceof Neos.MetaData:Image][gpsLatitude]').get()}
 
         itemName = 'image'
         itemRenderer = DL.Gallery.Map:MapDataEntry
@@ -15,6 +14,17 @@ prototype(DL.Gallery.Map:Map) < prototype(Neos.Fusion:Template) {
 
     mapConfiguration = ${Configuration.setting('DL.Gallery.Map')}
     mapConfiguration.@process.json = ${Json.stringify(value)}
+
+    @cache {
+        mode = 'cached'
+        entryIdentifier {
+            node = ${node}
+        }
+
+        entryTags {
+            1 = ${'NodeType_Neos.MetaData:Image'}
+        }
+    }
 }
 
 prototype(DL.Gallery.Map:MapDataEntry) < prototype(Neos.Fusion:Value) {
@@ -22,8 +32,11 @@ prototype(DL.Gallery.Map:MapDataEntry) < prototype(Neos.Fusion:Value) {
 
     data = Neos.Fusion:RawArray {
         title = ${image.property('title')}
-        gpsLatitude = ${image.property('gpsLatitude')}
-        gpsLongitude = ${image.property('gpsLongitude')}
+
+        // uh lat and long are switched :|
+        gpsLatitude = ${image.property('gpsLongitude')}
+        gpsLongitude = ${image.property('gpsLatitude')}
+
         thumb = Neos.Neos:ImageUri {
             asset = ${image.property('assetObject')}
             width = 200
