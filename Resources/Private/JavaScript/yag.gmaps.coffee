@@ -21,6 +21,8 @@ Google Maps integration for YAG gallery
       streetViewControl: false
       mapTypeControl: false
       panControl: false
+      scrollwheel: false
+      draggable: false
     data: {}
     cluster: true
     langCode: 'de'
@@ -68,11 +70,6 @@ Google Maps integration for YAG gallery
       @options.mapOptions = $.extend true, {}, @options.mapOptions,
         center: new google.maps.LatLng(@options.center.lat, @options.center.lng)
         mapTypeId: google.maps.MapTypeId.HYBRID
-
-      # Set map size
-      @$mapObj.css
-        width: @options.width
-        height: @options.height
 
       # Store reference to class in data attribute
       @$mapObj.data 'api', @
@@ -136,7 +133,7 @@ Google Maps integration for YAG gallery
       markerOptions =
         title: markerData.title
         image: markerData.icon
-        classname: 'map-marker'
+        classname: 'dl-gallery-map-marker'
 
       markerPosition = new google.maps.LatLng markerData.latitude, markerData.longitude
 

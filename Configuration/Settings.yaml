@@ -3,7 +3,7 @@ DL:
     Map:
       gmaps:
         width: "100%"
-        height: "600px"
+        height: 800px
         showRouteToLink: false
         dropAnimation: true
         cluster: true

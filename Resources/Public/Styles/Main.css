@@ -1,3 +1,13 @@
+.dl-gallery-map {
+  height: 250px;
+  width: 100%;
+}
+@media (min-width: 922px) {
+  .dl-gallery-map {
+    height: 750px;
+  }
+}
+
 .dl-gallery-map-container,
 .dl-gallery-map-marker,
 .dl-gallery-map-info {

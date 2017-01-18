@@ -10,7 +10,7 @@
             longitude, latitude, locationHash,
             listData = $selector.data('images'),
             itemLength = listData.length,
-            itemGroupId, itemGroup, itemGroups = {}, markerContent, markerTitle;
+            itemGroupId, itemGroup, itemGroups = {}, markerContent, markerTitle, markerImage;
 
         // Check for items on the same position
         for (i = 0; i < itemLength; i++) {
@@ -48,11 +48,18 @@
                 } else {
                     // Create single marker for one item
                     markerTitle = itemData.title;
-                    markerContent = '<a class="dl-gallery-map-item-link" href="' + itemData.lightbox + '" title="' +
-                        itemData.title + '">' +
-                        '<img width="' + thumbSettings.width + '" height="' + thumbSettings.height +
-                        '" src="' + itemData.thumb + '" alt="' + itemData.title + '" />' +
-                        '</a><p>' + itemData.description + '</p>';
+
+                    markerImage = '<img width="' + thumbSettings.width + '" height="' + thumbSettings.height + '" src="' + itemData.thumb + '" alt="' + itemData.title + '" />';
+
+                    if (itemData.lightbox) {
+                        markerContent = '<a class="dl-gallery-map-item-link" href="' + itemData.lightbox + '" title="' + itemData.title + '">' + markerImage + '</a>';
+                    } else {
+                        markerContent = markerImage;
+                    }
+
+                    if (itemData.description) {
+                        markerContent += '<p>' + itemData.description + '</p>'
+                    }
                 }
 
                 serviceData.push({

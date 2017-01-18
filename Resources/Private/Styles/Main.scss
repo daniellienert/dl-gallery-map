@@ -1,3 +1,15 @@
+// Variables
+$screen-md-min:              922px !default;
+
+.dl-gallery-map {
+  height: 250px;
+  width: 100%;
+
+  @media(min-width: $screen-md-min) {
+    height: 750px;
+  }
+}
+
 .dl-gallery-map-container,
 .dl-gallery-map-marker,
 .dl-gallery-map-info {

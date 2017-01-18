@@ -18,7 +18,9 @@ Google Maps integration for YAG gallery
         zoom: 14,
         streetViewControl: false,
         mapTypeControl: false,
-        panControl: false
+        panControl: false,
+        scrollwheel: false,
+        draggable: false
       },
       data: {},
       cluster: true,
@@ -38,8 +40,8 @@ Google Maps integration for YAG gallery
       clusterStyles: [
         {
           url: '/_Resources/Static/Packages/DL.Gallery.Map/Images/cluster.png',
-          width: 42,
-          height: 42,
+          width: 38,
+          height: 38,
           anchor: [8, 0],
           textColor: '#fff',
           textSize: 14
@@ -74,10 +76,7 @@ Google Maps integration for YAG gallery
           center: new google.maps.LatLng(this.options.center.lat, this.options.center.lng),
           mapTypeId: google.maps.MapTypeId.HYBRID
         });
-        this.$mapObj.css({
-          width: this.options.width,
-          height: this.options.height
-        });
+
         this.$mapObj.data('api', this);
         this.map = new google.maps.Map(this.$mapObj[0], this.options.mapOptions);
         ref = this.options.data;
@@ -92,6 +91,7 @@ Google Maps integration for YAG gallery
           maxZoom: options.mapOptions.zoom,
           styles: options.clusterStyles
         });
+
         if (this.options.showAllMarkers && this.markers.length > 1) {
           this.showAllMarkers();
         }
@@ -151,7 +151,6 @@ Google Maps integration for YAG gallery
 
       YagGoogleMap.prototype.createMapMarker = function(markerData) {
         var marker, markerOptions, markerPosition;
-
         markerOptions = {
           title: markerData.title,
           image: markerData.icon,
