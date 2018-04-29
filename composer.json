@@ -4,8 +4,8 @@
     "name": "dl/gallery-map",
     "require": {
         "neos/flow": "*",
-        "neos/metadata-contentrepositoryadapter": "dev-master",
-        "neos/metadata-extractor": "dev-master"
+        "neos/metadata-contentrepositoryadapter": "@dev",
+        "neos/metadata-extractor": "@dev"
     },
     "autoload": {
         "psr-4": {
