@@ -1,4 +1,5 @@
 prototype(DL.Gallery.Map:Map) < prototype(Neos.Fusion:Template) {
+    templatePath = 'resource://DL.Gallery.Map/Private/Templates/NodeTypes/Map.html'
 
     mapData = Neos.Fusion:Collection {
         collection = ${q(assets).children('[instanceof Neos.MetaData:Image][gpsLatitude]').get()}
